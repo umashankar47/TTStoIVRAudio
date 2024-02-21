@@ -7,7 +7,7 @@ Supports CSV file read for batch processing .
 
 CSV  columns - 
 
-Filename with extension , TTS Conten
+Filename with extension , TTS Content
 
 Eg. - 
 
