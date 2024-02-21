@@ -11,16 +11,8 @@ Filename with extension , TTS Conten
 
 Eg. - 
 
-press1.wav,press 1
-press2.wav,press 2
-press3.wav,press 3
-press4.wav,Press 4
-press5.wav,press 5
-press6.wav,press 6
-press7.wav,press 7
-press8.wav,press 8
-press9.wav,press 9
-press#.wav,press #
+![image](https://github.com/umashankar47/TTStoIVRAudio/assets/159722680/1fceb1e7-a549-41eb-92ec-d3e27542fd14)
+
 
 
 Known Issues - 
