@@ -23,7 +23,7 @@ Upcoming Features  -
 
 1. DB Support
 2. New Modern GUI
-3.Support to Choose the Output format
+3. Support to Choose the Output format
 
  
 
