@@ -1,4 +1,5 @@
-GUI program in python to generate Tesxt - To - Speech audio files supported in Interactive Voice Response applications.
+GUI program in python to generate Text - To - Speech audio files supported in Interactive Voice Response applications.
+Built for testing IVR applications audios.
 
 ![image](https://github.com/umashankar47/TTStoIVRAudio/assets/159722680/693af828-51ea-43aa-a1f4-9acec35e97dd)
 
@@ -15,15 +16,6 @@ Eg. -
 
 
 
-Known Issues - 
-
-1. Cancel operation not working when generating audio from CSV
-
-Upcoming Features  - 
-
-1. DB Support
-2. New Modern GUI
-3. Support to Choose the Output format
 
  
 
