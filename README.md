@@ -1,47 +1,138 @@
-**Text-to-Speech Converter for IVR Audio Testing**
-
-This Python program, built with Tkinter, provides a simple GUI for converting text into speech using Google Text-to-Speech (gTTS). It then converts the generated speech into an audio format that is compatible with Interactive Voice Response (IVR) systems, making it easier to test and verify audio files used in IVR applications.
-
-**Features**
-
-Text to Speech Conversion: Enter any text, and the program converts it into speech using Google Text-to-Speech (gTTS).
-
-IVR Compatible Audio: The generated speech is automatically saved in an audio format supported by IVR systems.
-
-Batch Processing via CSV: Load a CSV file containing prompt names and content. The program will create a folder and save each generated audio file with the corresponding prompt name.
-
-User-Friendly Interface: Built with Tkinter, the program offers a simple and intuitive GUI for easy interaction.
-
-Quick Audio Testing: Ideal for testing and verifying audio files during IVR development and deployment.
-
-**Requirements**
-
-Python 3.x
-Tkinter (usually included with Python installations)
-gTTS (Google Text-to-Speech)
-csv (for CSV file handling)
+# TTS to IVR Audio - Python dependencies
+# Install with: pip install -r requirements.txt
 
 
-**Usage**
+# TTS to IVR Audio
 
-Convert Text to Speech
-Enter the text you wish to convert into speech in the provided text box.
-Click the "Convert" button to generate the audio file.
-The program will save the audio file in the specified directory, ready for use in IVR systems.
-Batch Processing with CSV
-Prepare a CSV file with two columns: prompt_name and content.
-Load the CSV file into the program.
-The program will create a folder named after the CSV file and save all the generated audio files with the corresponding prompt names.
+A simple desktop tool that converts text (or a CSV of prompts) into speech using Google Text-to-Speech (gTTS) and then converts the audio into a format suitable for Interactive Voice Response (IVR) systems.
 
-![image](https://github.com/umashankar47/TTStoIVRAudio/assets/159722680/693af828-51ea-43aa-a1f4-9acec35e97dd)
+**Target format:** 8 kHz, mono, 16-bit PCM WAV (common for telephony / IVR testing).
+
+---
+
+## Features
+
+- Single-text conversion via a simple GUI
+- Batch processing from a CSV file (`prompt_name`, `content`)
+- Language selection (powered by gTTS)
+- Automatic conversion to IVR-friendly audio (8 kHz mono)
+- Progress window for batch jobs
+- Output folder selection
+
+---
+
+## Requirements
+
+- Python 3.8 or higher
+- Tkinter (included with most Python installations)
+- FFmpeg (recommended – required by `pydub` for some audio operations)
+
+### Python packages
+
+Install the dependencies with:
+
+```bash
+pip install -r requirements.txt
+```
+
+Contents of `requirements.txt`:
+
+```
+gTTS>=2.5.0
+librosa>=0.10.1
+numpy>=1.24.0
+soundfile>=0.12.1
+pydub>=0.25.1
+```
+
+---
+
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/umashankar47/TTStoIVRAudio.git
+cd TTStoIVRAudio
+```
+
+2. (Recommended) Create and activate a virtual environment:
+
+```bash
+python -m venv venv
+
+# Windows
+venv\Scripts\activate
+
+# macOS / Linux
+source venv/bin/activate
+```
+
+3. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+4. (Optional but recommended) Install FFmpeg and make sure it is available in your system PATH.
+
+---
+
+## Usage
+
+Run the application:
+
+```bash
+python main.py
+```
+
+### Single prompt
+
+1. Type the text you want to convert in the text field.
+2. Choose a language from the dropdown.
+3. Click **O/P Folder** to select where the audio file should be saved.
+4. Click **Generate**.
+
+### Batch processing (CSV)
+
+1. Prepare a CSV file with two columns (no header required, but the first row is skipped as a header in the current code):
+
+   ```csv
+   prompt_name,content
+   welcome,Welcome to our customer service line.
+   menu,Please press 1 for sales or 2 for support.
+   goodbye,Thank you for calling. Goodbye.
+   ```
+
+2. Click **Load a CSV File** and select your CSV.
+3. Choose the output folder.
+4. In the progress window click **Start**.
+
+Audio files will be named after the `prompt_name` column and saved in the selected output folder.
+
+---
+
+## Notes & Known Limitations
+
+- The application currently hard-codes the conversion to supported IVR audio format **8 kHz mono PCM_16  μ-law / A-law **. 
+- Only the Google TTS engine is fully wired up.
+
+---
+
+## Project Structure
+
+```
+TTStoIVRAudio/
+├── main.py              # Main application (GUI + logic)
+├── requirements.txt     # Python dependencies
+├── README.md            # This file
+└── .idea/               # IDE settings (should normally be git-ignored)
+```
+
+---
 
 
-Eg. - 
 
-![image](https://github.com/umashankar47/TTStoIVRAudio/assets/159722680/1fceb1e7-a549-41eb-92ec-d3e27542fd14)
+## License
 
-
-
-
- 
-
+No license file is currently present in the repository. Please add one if you plan to distribute or reuse the code.
